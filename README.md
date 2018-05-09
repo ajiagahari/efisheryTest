@@ -27,4 +27,4 @@ npm run unit
 npm run e2e
 
 ### run all tests
-npm tes
+npm test
