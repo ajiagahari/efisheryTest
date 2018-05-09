@@ -10,3 +10,5 @@ https://github.com/vuejs/vue-cli
 
 then
 run `npm install`
+
+just run with `npm run dev`
