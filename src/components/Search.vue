@@ -5,7 +5,7 @@
         Select by
       </span>
       <input v-model="name" type="text" placeholder="name"/>
-      <select v-model="setSelected">
+      <select v-model="setSelected" class="setSelected">
         <option value="" selected>Set -- </option>
         <option v-for="option in sets" v-bind:value="option.name">
           {{ option.name }}
@@ -50,7 +50,7 @@ export default {
       cards: [],
       errors: [],
       getSearch: function () {
-        pokemon.card.where({ name: this.name, set: this.setSelected, subtype: this.subtypeSelected, supertype: this.supertypeSelected })
+        this.$root.$options.Pokemon.card.where({ name: this.name, set: this.setSelected, subtype: this.subtypeSelected, supertype: this.supertypeSelected })
           .then(cards => {
             if (cards.length > 0) {
               this.cards = cards
@@ -62,7 +62,7 @@ export default {
     }
   },
   created () {
-    pokemon.set.where({})
+    this.$root.$options.Pokemon.set.where({})
       .then(sets => {
         this.sets = sets
       })
@@ -111,4 +111,5 @@ li {
 a {
   color: #42b983;
 }
+
 </style>

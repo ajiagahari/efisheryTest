@@ -14,6 +14,7 @@
                     <span class="card-hp">HP {{card.hp}}</span>
                     <i v-for="type of card.types" :class="type" class="energy"></i>
                 </div>
+                <span class="idCard">card id : {{cardId}}</span>
                 <hr>
                 <div class="content">
                     <div class="ability" v-if="card.ability">
@@ -100,7 +101,7 @@
 
 <script>
 export default {
-  name: 'View',
+  name: 'Viewexclude',
   props: ['cardId'],
   data () {
     return {
@@ -109,10 +110,9 @@ export default {
     }
   },
   mounted () {
-    pokemon.card.find(this.cardId)
+    this.$root.$options.Pokemon.card.find(this.cardId)
       .then(result => {
         this.card = result.card
-        console.log(this.card)
       })
   }
 }
@@ -123,10 +123,13 @@ export default {
 .button {
     background-color: #e7e7e7;
     border: none;
+    color: black;
+    width: 40px;
+    margin:0 auto;
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     font-size: 1rem;
 }
 ul {
@@ -170,6 +173,11 @@ li {
 .Dragon{
     background-position: 187px -8px;
 }
+.idCard{
+    font-size: 0.5rem;
+    color: #95A5A6;
+
+}
 .Poké-Power{
     background-image: url(../assets/poke-power.png);
     width: 103px;
@@ -182,6 +190,7 @@ li {
     height: 43px;
     display: inline-block;
 }
+
 .view-card div{
     background: #fff;;
     vertical-align:top;
@@ -214,7 +223,7 @@ li {
     max-width: 100%;
 }
 .card-detail{
-    margin: 0.75rem;
+    margin: 0.5rem;
 }
 .card-detail .header .card-name {
     font-size: 1.5rem;
