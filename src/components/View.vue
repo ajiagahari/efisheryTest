@@ -14,7 +14,7 @@
                     <span class="card-hp">HP {{card.hp}}</span>
                     <i v-for="type of card.types" :class="type" class="energy"></i>
                 </div>
-                <span class="idCard">card id : {{cardId}}</span>
+                card id : <span class="idCard">{{cardId}}</span>
                 <hr>
                 <div class="content">
                     <div class="ability" v-if="card.ability">
