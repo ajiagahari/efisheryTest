@@ -2,8 +2,8 @@
 project tugas eFishery
 
 ## using
-##### vue-cli 
-https://github.com/vuejs/vue-cli
+##### vue-webpack-boilerplate
+https://github.com/vuejs-templates/webpack
 #### Pokemon TCG SDK - Javascript
 https://github.com/PokemonTCG/pokemon-tcg-sdk-javascript
 
